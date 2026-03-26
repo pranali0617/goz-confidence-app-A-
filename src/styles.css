@@ -48,7 +48,7 @@ body {
 .panel.survey,
 .panel.results {
   /* Make each screen feel full-height while keeping the card centered. */
-  min-height: calc(100vh - 48px);
+  min-height: calc(50vh - 48px);
   display: grid;
   align-items: center;
 }
@@ -62,12 +62,17 @@ body {
 
 .hero {
   text-align: center;
+  display: grid;
+  gap: 6px;
 }
 
 .hero-subtitle {
   max-width: 46ch;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 5px;
+  line-height: 1.45;
 }
 
 .hero-subtitle span {
@@ -75,7 +80,7 @@ body {
 }
 
 .hero-subtitle span + span {
-  margin-top: 10px;
+  margin-top: 4px;
 }
 
 .hero-icon {
@@ -87,7 +92,7 @@ body {
   display: grid;
   place-items: center;
   font-weight: 700;
-  margin: 0 auto 18px;
+  margin: 0 auto 5px;
 }
 
 .hero-icon svg {
@@ -103,12 +108,12 @@ h3 {
 
 h1 {
   font-size: 2.4rem;
-  margin-bottom: 12px;
+  margin-bottom: 2px;
 }
 
 .subtitle {
   color: var(--muted);
-  margin-bottom: 24px;
+  margin-bottom: 6px;
   line-height: 1.6;
 }
 
@@ -163,7 +168,7 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 18px;
-  margin-top: 24px;
+  margin-top: 8px;
   color: var(--muted);
   font-size: 0.85rem;
 }
@@ -692,12 +697,20 @@ h1 {
 #step-3 {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   min-height: calc(100vh - 220px);
 }
 
+#step-3 .result-block:first-of-type {
+  margin-top: -6px;
+}
+
 #coach-block {
-  margin-top: auto;
+  margin-top: 250px;
+}
+
+#coach-toggle-btn {
+  margin-top: 0;
 }
 
 .modal-backdrop {
