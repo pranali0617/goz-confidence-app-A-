@@ -37,9 +37,12 @@ export const AI_REPAIR_JSON =
   (process.env.AI_REPAIR_JSON ?? env.AI_REPAIR_JSON ?? "1").toString().trim() !== "0";
 export const LLM_TIMEOUT_MS = Number(process.env.LLM_TIMEOUT_MS ?? env.LLM_TIMEOUT_MS ?? 45000);
 
-export const LLM_PROVIDER = (process.env.LLM_PROVIDER ?? env.LLM_PROVIDER ?? "gemini")
+const RAW_LLM_PROVIDER = (process.env.LLM_PROVIDER ?? env.LLM_PROVIDER ?? "")
   .toString()
-  .trim();
+  .trim()
+  .toLowerCase();
+export const LLM_PROVIDER = RAW_LLM_PROVIDER ||
+  (GROQ_API_KEY ? "groq" : NVIDIA_API_KEY ? "nvidia" : "gemini");
 export const GEMINI_MODEL = (process.env.GEMINI_MODEL ?? env.GEMINI_MODEL ?? "gemini-2.5-flash")
   .toString()
   .trim();
